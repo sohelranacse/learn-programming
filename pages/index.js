@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Learn Programming</title>
+        <title>Home | Learn Programming</title>
         <meta name="description" content="Learn Programming" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

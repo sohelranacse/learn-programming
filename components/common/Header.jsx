@@ -8,8 +8,8 @@ import { FaSearch } from "react-icons/fa";
 
 function Header() {
   return (
-    <nav className="w-full fixed top-0 z-10 shadow-md bg-slate-100">
-      <div className="container mx-auto px-2 h-14 flex flex-row">
+    <nav className="w-full fixed top-0 z-10 shadow-md bg-slate-100 px-2">
+      <div className="container mx-auto h-14 flex flex-row">
         <Link
           href="/"
           className="basis-2/12 p-2 ease-linear duration-100 h-full"
@@ -27,26 +27,26 @@ function Header() {
           </li>
           <li className="basis-1/12 text-center py-2">
             <Link
-              href="/"
+              href="/about"
               className="py-2 px-4 hover:bg-slate-200 hover:rounded-full ease-linear duration-150"
             >
               About
             </Link>
           </li>
           <li className="basis-10/12 ml-2">
-            <form className="inline-flex h-10 w-full border border-slate-300">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="h-full w-full pl-2"
-                required
-              />
+            <form className="inline-flex h-10 w-full border border-slate-300 rounded-sm hover:border-slate-400">
               <button
                 type="submit"
-                className="text-white bg-slate-700 font-[600] text-sm h-full px-4"
+                className="bg-white text-slate-400 font-bold text-sm px-4"
               >
                 <FaSearch />
               </button>
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-full pl-2 focus:outline-none"
+                required
+              />
             </form>
           </li>
         </ul>
