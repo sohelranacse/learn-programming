@@ -13,9 +13,9 @@
     "axios": "^1.3.2",
     "next": "13.1.6",
     "nextjs-progressbar": "^0.0.16",
-    "prism-themes": "github:prismjs/prism-themes",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-highlight": "^0.15.0",
     "react-icons": "^4.7.1"
   },
   "devDependencies": {
