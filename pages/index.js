@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Homepage from "../components/Homepage";
 
 export default function Home() {
 
@@ -10,7 +11,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <p className="container mx-auto text-[#f00]">Good morning, Homepage</p>
+      <Homepage />
+
+      {/* <div className="container mx-auto">
+        <p>Good morning, Homepage</p>
+        <h1 className="text-2xl">Computer Science</h1>
+      </div> */}
     </>
   );
 }
