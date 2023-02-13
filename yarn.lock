@@ -1835,6 +1835,10 @@
   "resolved" "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
   "version" "1.2.1"
 
+"prism-themes@github:prismjs/prism-themes":
+  "resolved" "git+ssh://git@github.com/prismjs/prism-themes.git#447479fc7b2be2051fe27e561aceed7cc87a589f"
+  "version" "1.9.0"
+
 "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
