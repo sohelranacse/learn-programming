@@ -13,7 +13,7 @@ function Footer() {
           &copy; 2023{" "}
           <Link
             href="/"
-            className="font-bold hover:text-blue-600 ease-linear duration-200"
+            className="text-yellow-300 hover:text-slate-100 ease-linear duration-200"
           >
             CodeEnthusiasts.com
           </Link>{" "}
