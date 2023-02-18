@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Homepage from "../components/Homepage";
+import axios from "axios";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-export default function Home() {
+export default function Home({ categories }) {
 
   return (
     <>
@@ -11,12 +13,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Homepage />
-
-      {/* <div className="container mx-auto">
-        <p>Good morning, Homepage</p>
-        <h1 className="text-2xl">Computer Science</h1>
-      </div> */}
+      <Homepage categories={categories} />
     </>
   );
 }
+
+
+export const getServerSideProps = async () => {
+  const categoryRes = await axios.get(`${API_URL}api/categories`);
+  return {
+    props: {
+      categories: categoryRes.data.response,
+    },
+  };
+};

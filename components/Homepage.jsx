@@ -4,11 +4,11 @@ import NavSide from "./NavSide";
 import Article from "./Article";
 import RecentArticles from "./RecentArticles";
 
-function Homepage() {
+function Homepage({ categories }) {
   return (
     <section className="px-2 mt-14 min-h-screen">
       <div className="container mx-auto md:flex flex-row h-full">
-        <NavSide />
+        <NavSide categories={categories} />
         <div className="basis-7/12 h-full py-6 md:px-6">
           <h1 className="text-xl pb-3">Featured Articles</h1>
           <ul className="py-2">

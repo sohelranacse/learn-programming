@@ -9,6 +9,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const PF = process.env.NEXT_PUBLIC_PF;
 
 function Article() {
+  // console.log(postDetails);
   const router = useRouter();
   const { asPath } = useRouter();
   return (
@@ -24,4 +25,14 @@ function Article() {
   );
 }
 
+// export const getServerSideProps = async ({ params }) => {
+//   const postDetailsRes = await axios.get(
+//     `${API_URL}api/postDetails/${params.id}`
+//   );
+//   return {
+//     props: {
+//       postDetails: postDetailsRes.data.response,
+//     },
+//   };
+// };
 export default Article;
