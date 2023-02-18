@@ -10,12 +10,12 @@ function Footer() {
     <footer className="bg-slate-800 px-2">
       <div className="container mx-auto text-center text-slate-100 py-2">
         <p>
-          &copy; 2023{" "}
+          &copy; {new Date().getFullYear()}{" "}
           <Link
             href="/"
             className="text-yellow-300 hover:text-slate-100 ease-linear duration-200"
           >
-            CodeEnthusiasts.com
+            DevLearnHub.com
           </Link>{" "}
           All Right Reserved
         </p>

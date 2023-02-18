@@ -4,7 +4,7 @@ import { HiOutlineHome } from "react-icons/hi";
 
 function NavSide({ categories }) {
   return (
-    <div className="basis-2/12 md:border-r border-slate-300 min-h-full py-6">
+    <div className="basis-2/12 py-6">
       <ul>
         <li>
           <Link

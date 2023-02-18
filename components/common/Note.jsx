@@ -14,9 +14,8 @@ import { FaFacebookSquare } from "react-icons/fa";
 
 function Note() {
   return (
-    <div className="container mx-auto">
-      This is Note
-      <p>Hello</p>
+    <div className="">
+      <h4>Code Title here</h4>
       <CodeBlock
         code={`import React from "react";
 import Highlight from "react-highlight";
@@ -31,23 +30,6 @@ export default CodeBlock;
         language={"language-javascript"}
       />
       <div className="my-4"></div>
-      <CodeBlock
-        code={`function get_distributor_offer_requisition_data() {
-		if(!empty($_POST)) {
-			$this->form_validation->set_rules('distributor_id', 'distributor_id', 'trim|numeric|required');
-			if($this->form_validation->run() == TRUE) {
-				$distributor_id = $this->input->post('distributor_id');
-				$Mydata['challan_info'] = $this->distributor_mdl->get_distributor_offer_requisition_data($distributor_id);
-				$Mydata['product_type'] = $this->distributor_mdl->get_distributor_item_type();		
-				$data['result'] = $this->load->view('distributor/offer_requisition_data', $Mydata, true);
-			} else {
-				$data['result'] = 'error';
-			}
-			echo json_encode($data['result']);
-		}
-	}`}
-        language={"language-javascript"}
-      />
     </div>
   );
 }

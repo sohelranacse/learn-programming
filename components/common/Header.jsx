@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import Dark from "./Dark";
 import React, { useState } from "react";
 const PF = process.env.NEXT_PUBLIC_PF;
 
@@ -57,20 +58,23 @@ function Header() {
             </li>
           </ul>
         </div>
-        <form className="basis-8/12 md:basis-5/12 inline-flex ml-2 my-2 h-10 w-full border border-slate-300 rounded-sm hover:border-yellow-400">
-          <button
-            type="submit"
-            className="bg-white text-slate-400 font-bold text-sm px-4"
-          >
-            <FaSearch />
-          </button>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-full pl-2 focus:outline-none"
-            required
-          />
-        </form>
+        <div className="basis-8/12 md:basis-5/12  ml-2 my-2 flex justify-between gap-2">
+          <form className="inline-flex h-10 w-full border border-slate-300 rounded-sm hover:border-yellow-400">
+            <button
+              type="submit"
+              className="bg-white text-slate-400 font-bold text-sm px-4"
+            >
+              <FaSearch />
+            </button>
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full bg-white focus:outline-none"
+              required
+            />
+          </form>
+          <Dark />
+        </div>
       </div>
     </nav>
   );
