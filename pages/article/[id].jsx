@@ -15,8 +15,8 @@ function Article() {
   return (
     <>
       <Head>
-        <title>Article | Learn Programming</title>
-        <meta name="description" content="Learn Programming" />
+        <title>Article | DevLearnHub</title>
+        <meta name="description" content="DevLearnHub" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

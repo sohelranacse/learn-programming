@@ -4,8 +4,8 @@ export default function about() {
   return (
     <>
       <Head>
-        <title>About | Learn Programming</title>
-        <meta name="description" content="Learn Programming" />
+        <title>About | DevLearnHub</title>
+        <meta name="description" content="DevLearnHub" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

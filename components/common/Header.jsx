@@ -9,10 +9,17 @@ import { FaSearch } from "react-icons/fa";
 
 function Header() {
   return (
-    <nav className="w-full fixed top-0 z-10 shadow-md bg-slate-100 px-2">
-      <div className="container mx-auto h-14 flex flex-row">
-        <div className="basis-4/12 md:basis-7/12 flex justify-between">
-          <Link href="/" className="p-2 ease-linear duration-100 h-full">
+    <nav className="w-full fixed top-0 z-10 shadow-md bg-slate-100 px-2 border-t-[3.5px] border-yellow-400">
+      <div className="container mx-auto h-14 grid grid-cols-12">
+        <div className="col-span-4 md:col-span-7 flex justify-between">
+          {/* menu icon */}
+          <AiOutlineMenu
+            role="button"
+            className="md:hidden md:pl-2 my-2 h-9 w-8 text-yellow-500"
+          />
+
+          {/* logo */}
+          <Link href="/" className="pl-2 py-2 ease-linear duration-100 h-full">
             <img src={`${PF}logo.png`} className="w-[150px]" alt={"logo"} />
           </Link>
           <ul className="hidden md:flex justify-between py-2">
@@ -58,11 +65,11 @@ function Header() {
             </li>
           </ul>
         </div>
-        <div className="basis-8/12 md:basis-5/12  ml-2 my-2 flex justify-between gap-2">
+        <div className="col-span-8 md:col-span-5  ml-2 my-2 flex justify-between gap-2">
           <form className="inline-flex h-10 w-full border border-slate-300 rounded-sm hover:border-yellow-400">
             <button
               type="submit"
-              className="bg-white text-slate-400 font-bold text-sm px-4"
+              className="bg-white text-slate-400 font-bold text-lg px-4"
             >
               <FaSearch />
             </button>

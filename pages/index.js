@@ -8,8 +8,8 @@ export default function Home({ categories }) {
   return (
     <>
       <Head>
-        <title>Learn Programming</title>
-        <meta name="description" content="Learn Programming" />
+        <title>DevLearnHub</title>
+        <meta name="description" content="DevLearnHub" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

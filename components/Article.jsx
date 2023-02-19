@@ -10,7 +10,7 @@ function Article({
   published_on,
 }) {
   return (
-    <div className="mb-5 flex gap-2 border rounded shadow-md p-4">
+    <div className="mb-5 md:flex gap-2 border rounded shadow-md pl-3 p-4">
       <Link
         href="/category/1"
         className="text-yellow-500 font-bold text-3xl hover:text-blue-700 ease-linear duration-150"

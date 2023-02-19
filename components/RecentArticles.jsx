@@ -5,11 +5,11 @@ function RecentArticles() {
   return (
     <>
       <h1 className="text-xl pl-2">Recent Articles</h1>
-      <ul className="py-4 pl-2">
-        <li className="py-1">
+      <ul className="py-3 pl-2 rounded border shadow-md my-4">
+        <li className="py-2">
           <Link
             href="/"
-            className="flex text-blue-700 hover:text-blue-400 ease-linear duration-150"
+            className="flex text-blue-700 hover:text-blue-400 ease-linear duration-150 pr-2"
           >
             <span className="text-yellow-500 font-bold text-2xl pr-2">
               <svg
@@ -30,7 +30,7 @@ function RecentArticles() {
         <li className="py-1">
           <Link
             href="/"
-            className="flex text-blue-700 hover:text-blue-400 ease-linear duration-150"
+            className="flex text-blue-700 hover:text-blue-400 ease-linear duration-150 pr-2"
           >
             <span className="text-yellow-500 font-bold text-2xl pr-2">
               <svg
@@ -51,7 +51,7 @@ function RecentArticles() {
         <li className="py-1">
           <Link
             href="/"
-            className="flex text-blue-700 hover:text-blue-400 ease-linear duration-150"
+            className="flex text-blue-700 hover:text-blue-400 ease-linear duration-150 pr-2"
           >
             <span className="text-yellow-500 font-bold text-2xl pr-2">
               <svg
@@ -73,7 +73,7 @@ function RecentArticles() {
         <li className="py-1">
           <Link
             href="/"
-            className="flex text-blue-700 hover:text-blue-400 ease-linear duration-150"
+            className="flex text-blue-700 hover:text-blue-400 ease-linear duration-150 pr-2"
           >
             <span className="text-yellow-500 font-bold text-2xl pr-2">
               <svg

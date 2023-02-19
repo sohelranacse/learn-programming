@@ -15,8 +15,8 @@ function Category() {
   return (
     <>
       <Head>
-        <title>Category | Learn Programming</title>
-        <meta name="description" content="Learn Programming" />
+        <title>Category | DevLearnHub</title>
+        <meta name="description" content="DevLearnHub" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
