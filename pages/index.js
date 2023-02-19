@@ -9,7 +9,7 @@ export default function Home({ categories }) {
     <>
       <Head>
         <title>DevLearnHub</title>
-        <meta name="description" content="DevLearnHub" />
+        <meta name="description" content="Experience the power of web development with DevLearnHub." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

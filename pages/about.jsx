@@ -5,7 +5,10 @@ export default function about() {
     <>
       <Head>
         <title>About | DevLearnHub</title>
-        <meta name="description" content="DevLearnHub" />
+        <meta
+          name="description"
+          content="Experience the power of web development with DevLearnHub"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
