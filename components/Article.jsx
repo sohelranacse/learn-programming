@@ -12,24 +12,35 @@ function Article({
   published_on,
 }) {
   return (
-    <div className="mb-5 md:flex gap-2 border rounded shadow-md pl-3 p-4">
-      <Link
-        href="/category/1"
-        className="text-yellow-500 font-bold text-3xl hover:text-blue-700 ease-linear duration-150"
-      >
-        <DiReact />
-      </Link>
-      <div>
+    <div className="mb-5 border rounded shadow-md p-4">
+      <h1 className="text-lg">
         <Link
           href={post_slug}
-          className="text-lg text-blue-700 hover:text-blue-400 ease-linear duration-150"
+          className="text-blue-700 hover:text-blue-400 ease-linear duration-150"
         >
           {post_title}
         </Link>
-        <p className="pt-1 pb-2 text-justify">{description}</p>
-        <div className="flex flex-wrap justify-end">
-          <span className="text-sm text-slate-400 italic">{published_on}</span>
-        </div>
+      </h1>
+      <p className="pt-1 pb-2 text-justify">
+        {description}{" "}
+        <Link
+          href={post_slug}
+          className="italic text-slate-400 hover:text-blue-400 ease-linear duration-150"
+        >
+          read more...
+        </Link>
+      </p>
+      <div className="flex flex-wrap justify-between">
+        <Link
+          href="/category/1"
+          className="flex flex-wrap text-yellow-500 hover:text-blue-700 ease-linear duration-150"
+        >
+          <span className="font-bold text-lg pt-0.5">
+            <DiReact />
+          </span>{" "}
+          <span className="text-sm font-normal">React</span>
+        </Link>
+        <span className="text-sm text-slate-400 italic">{published_on}</span>
       </div>
     </div>
   );
