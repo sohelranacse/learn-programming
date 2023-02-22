@@ -4,7 +4,7 @@ import Article from "./Article";
 function RegularArticles() {
   return (
     <>
-      <h1 className="text-xl pb-4">Articles</h1>
+      <h1 className="text-xl pb-4 dark:text-gray-200">Articles</h1>
       <div>
         <Article
           post_title={`What is the difference between an array and a linked list?`}

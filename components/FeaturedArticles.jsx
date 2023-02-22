@@ -4,7 +4,7 @@ import Article from "./Article";
 function FeaturedArticles() {
   return (
     <>
-      <h1 className="text-xl pb-4">Featured Articles</h1>
+      <h1 className="text-xl pb-4 dark:text-gray-200">Featured Articles</h1>
       <div className="md:grid grid-cols-2 gap-x-4">
         <Article
           post_title={`What is the difference between an array and a linked list?`}

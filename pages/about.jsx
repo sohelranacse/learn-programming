@@ -9,13 +9,12 @@ export default function about() {
           name="description"
           content="Experience the power of web development with DevLearnHub"
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <section className="px-2 mt-14 h-screen">
         <div className="container mx-auto">
-          <h1 className="text-2xl">About</h1>
-          <p>This is about page</p>
+          <h1 className="text-2xl dark:text-gray-200">About</h1>
+          <p className=" dark:text-gray-200">This is about page</p>
         </div>
       </section>
     </>

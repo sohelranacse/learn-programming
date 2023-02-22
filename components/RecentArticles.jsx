@@ -5,8 +5,8 @@ import { DiReact } from "react-icons/di";
 function RecentArticles() {
   return (
     <>
-      <h1 className="text-xl pl-2">Recent Articles</h1>
-      <ul className="py-3 pl-2 rounded border shadow-md my-4">
+      <h1 className="text-xl pl-2 dark:text-gray-200">Recent Articles</h1>
+      <ul className="py-3 pl-2 rounded border shadow-md my-4 dark:border-gray-700">
         <li className="py-2">
           <h1 className="font-normal">
             <Link

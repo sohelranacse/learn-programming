@@ -17,7 +17,6 @@ function Category() {
       <Head>
         <title>Category | DevLearnHub</title>
         <meta name="description" content="DevLearnHub" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <SpecificCategory />

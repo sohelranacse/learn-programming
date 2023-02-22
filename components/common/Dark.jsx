@@ -32,7 +32,7 @@ function Dark() {
         />
       );
   };
-  return <>{renderThemeChanger()}</>;
+  return renderThemeChanger();
 }
 
 export default Dark;

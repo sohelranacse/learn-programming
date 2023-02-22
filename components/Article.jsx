@@ -12,7 +12,7 @@ function Article({
   published_on,
 }) {
   return (
-    <div className="mb-5 border rounded shadow-md p-4">
+    <div className="mb-5 border rounded shadow-md p-4 dark:border-gray-700">
       <h1 className="text-lg">
         <Link
           href={post_slug}
@@ -21,7 +21,7 @@ function Article({
           {post_title}
         </Link>
       </h1>
-      <p className="pt-1 pb-2 text-justify">
+      <p className="pt-1 pb-2 text-justify dark:text-gray-400">
         {description}{" "}
         <Link
           href={post_slug}

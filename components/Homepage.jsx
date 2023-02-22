@@ -6,7 +6,7 @@ import RegularArticles from "./RegularArticle";
 
 function Homepage({ categories }) {
   return (
-    <section className="px-2 mt-14 min-h-screen">
+    <section className="px-2 mt-14 min-h-screen dark:bg-gray-800">
       <div className="container mx-auto md:grid grid-cols-12">
         <NavSide categories={categories} />
         <div className="col-span-7 h-full py-6 md:px-6">

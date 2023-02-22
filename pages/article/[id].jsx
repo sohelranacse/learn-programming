@@ -17,7 +17,6 @@ function Article() {
       <Head>
         <title>Article | DevLearnHub</title>
         <meta name="description" content="DevLearnHub" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <ArticleDetails />
