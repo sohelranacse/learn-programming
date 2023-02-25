@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import Dark from "./Dark";
-import React, { useState } from "react";
 const PF = process.env.NEXT_PUBLIC_PF;
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -10,6 +10,13 @@ import { useTheme } from "next-themes";
 
 function Header() {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   const logoSrc = theme === "dark" ? `${PF}logo-dark.png` : `${PF}logo.png`;
 
   return (
@@ -27,7 +34,7 @@ function Header() {
             href="/"
             className="md:hidden pl-4 py-[10px] ease-linear duration-100"
           >
-            <img src={`${PF}logo32.png`} className="" alt={"mobile logo"} />
+            <img src={`${PF}logo180.png`} className="" alt={"mobile logo"} />
           </Link>
 
           {/* logo */}
