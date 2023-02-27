@@ -1,12 +1,13 @@
+import React from "react";
 import Article from "./Article";
 
-function FeaturedArticles({ featured }) {
+function Recent({ recent }) {
   return (
     <>
-      <h1 className="text-xl pb-4 dark:text-gray-200">Featured Articles</h1>
-      <div className="md:grid grid-cols-2 gap-x-4">
-        {featured.length > 0 &&
-          featured.map((article, i) => (
+      <h1 className="text-xl pb-4 dark:text-gray-200">Recent Articles</h1>
+      <div>
+        {recent.length > 0 &&
+          recent.map((article, i) => (
             <Article
               key={i}
               post_title={article.post_title}
@@ -23,4 +24,4 @@ function FeaturedArticles({ featured }) {
   );
 }
 
-export default FeaturedArticles;
+export default Recent;

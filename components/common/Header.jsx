@@ -3,12 +3,10 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Dark from "./Dark";
 const PF = process.env.NEXT_PUBLIC_PF;
-
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { FaSearch } from "react-icons/fa";
 import { useTheme } from "next-themes";
 
-function Header() {
+function Header({ groupData }) {
+  const [nav, setNav] = useState(false);
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -19,30 +17,63 @@ function Header() {
 
   const logoSrc = theme === "dark" ? `${PF}logo-dark.png` : `${PF}logo.png`;
 
+  const handleNav = () => {
+    // if (nav) document.querySelector("html").style.overflow = "";
+    // else document.querySelector("html").style.overflow = "hidden";
+
+    // console.log(nav);
+    setNav(!nav);
+    // console.log(nav);
+  };
+
   return (
     <nav className="w-full fixed top-0 z-10 shadow-md bg-slate-100 px-2 border-t-[3.5px] border-yellow-400 dark:bg-gray-900 dark:text-gray-200">
       <div className="container mx-auto h-14 grid grid-cols-12">
-        <div className="col-span-4 md:col-span-7 flex md:justify-between">
+        <div className="col-span-8 md:col-span-6 flex md:justify-between">
           {/* menu icon */}
-          <AiOutlineMenu
-            role="button"
-            className="md:hidden my-2.5 h-9 w-8 text-yellow-500"
-          />
-
-          {/* mobile logo */}
-          <Link
-            href="/"
-            className="md:hidden pl-4 py-[10px] ease-linear duration-100"
-          >
-            <img src={`${PF}logo180.png`} className="" alt={"mobile logo"} />
-          </Link>
+          {nav ? (
+            <svg
+              role="button"
+              onClick={handleNav}
+              className="md:hidden text-2xl my-4 text-yellow-500"
+              stroke="currentColor"
+              fill="none"
+              strokeWidth="0"
+              viewBox="0 0 15 15"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          ) : (
+            <svg
+              role="button"
+              onClick={handleNav}
+              stroke="currentColor"
+              fill="currentColor"
+              strokeWidth="0"
+              viewBox="0 0 1024 1024"
+              className="md:hidden text-2xl my-4 text-yellow-500"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path>
+            </svg>
+          )}
 
           {/* logo */}
           <Link
             href="/"
-            className="hidden md:block pl-2 py-[10px] ease-linear duration-100 h-full"
+            className="block pl-2 py-4 md:py-[10px] ease-linear duration-100 h-full"
           >
-            <img src={logoSrc} className="w-40" alt={"logo"} />
+            <img src={logoSrc} className="w-32 md:w-40" alt={"logo"} />
           </Link>
 
           {/* menu */}
@@ -50,52 +81,104 @@ function Header() {
             <li className="text-center">
               <Link
                 href="/"
-                className="inline-block py-2 px-4 hover:bg-slate-200 hover:rounded-full ease-linear duration-150 dark:hover:bg-gray-500"
+                className="flex gap-2 py-2 px-4 hover:bg-slate-200 hover:rounded ease-linear duration-150 dark:hover:bg-gray-500"
               >
+                <span className="font-bold text-xl mt-0.5">
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="0"
+                    viewBox="0 0 24 24"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    ></path>
+                  </svg>
+                </span>
                 Home
               </Link>
             </li>
-            <li className="text-center">
-              <Link
-                href="/about"
-                className="inline-block py-2 px-4 hover:bg-slate-200 hover:rounded-full ease-linear duration-150 dark:hover:bg-gray-500"
-              >
-                Front-end
-              </Link>
-            </li>
-            <li className="text-center">
-              <Link
-                href="/about"
-                className="inline-block py-2 px-4 hover:bg-slate-200 hover:rounded-full ease-linear duration-150 dark:hover:bg-gray-500"
-              >
-                Back-end
-              </Link>
-            </li>
-            <li className="text-center">
-              <Link
-                href="/about"
-                className="inline-block py-2 px-4 hover:bg-slate-200 hover:rounded-full ease-linear duration-150 dark:hover:bg-gray-500"
-              >
-                Web Security
-              </Link>
-            </li>
-            <li className="text-center">
-              <Link
-                href="/about"
-                className="inline-block py-2 px-4 hover:bg-slate-200 hover:rounded-full ease-linear duration-150 dark:hover:bg-gray-500"
-              >
-                Web Performance
-              </Link>
+            <li className="text-center relative group">
+              <span className="cursor-pointer flex gap-2 py-2 px-4 hover:bg-slate-200 hover:rounded ease-linear duration-150 dark:hover:bg-gray-500">
+                <span className="font-bold text-lg mt-1">
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <desc></desc>
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="5" cy="5" r="1"></circle>
+                    <circle cx="12" cy="5" r="1"></circle>
+                    <circle cx="19" cy="5" r="1"></circle>
+                    <circle cx="5" cy="12" r="1"></circle>
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="19" cy="12" r="1"></circle>
+                    <circle cx="5" cy="19" r="1"></circle>
+                    <circle cx="12" cy="19" r="1"></circle>
+                    <circle cx="19" cy="19" r="1"></circle>
+                  </svg>
+                </span>
+                Full Stack Development
+                <span className="font-bold text-xl mt-0.5">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 24 24"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                  </svg>
+                </span>
+              </span>
+              <ul className="absolute hidden bg-slate-100 dark:bg-gray-900 dark:text-white pt-2 rounded group-hover:block ease-linear duration-150">
+                {groupData.length > 0 &&
+                  groupData.map((group, i) => (
+                    <li className="text-center" key={i}>
+                      <Link
+                        href={`/tutorial/${group.group_slug}`}
+                        className="block py-2 px-2 hover:bg-slate-200 ease-linear duration-150 dark:hover:bg-gray-500"
+                      >
+                        {group.group_name}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
             </li>
           </ul>
         </div>
-        <div className="col-span-8 md:col-span-5  ml-2 my-2 flex justify-between gap-2">
-          <form className="inline-flex h-10 w-full border border-slate-300 rounded-sm hover:border-yellow-400 dark:border-gray-700 dark:hover:border-gray-400 ease-linear duration-150">
+        <div className="col-span-4 md:col-span-6 ml-2 flex justify-end gap-2">
+          <form className="hidden md:flex h-10 w-full border my-2 border-slate-300 rounded-sm hover:border-yellow-400 dark:border-gray-700 dark:hover:border-gray-400 ease-linear duration-150">
             <button
               type="submit"
-              className="bg-white text-slate-400 font-bold text-lg px-4 dark:bg-gray-800"
+              className="bg-white pointer-events-none text-slate-400 font-bold text-lg px-4 dark:bg-gray-800"
             >
-              <FaSearch />
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth="0"
+                viewBox="0 0 512 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+              </svg>
             </button>
             <input
               type="text"
@@ -104,9 +187,67 @@ function Header() {
               required
             />
           </form>
+          <svg
+            role="button"
+            className="block md:hidden text-2xl my-4 text-yellow-500 dark:text-slate-200"
+            stroke="currentColor"
+            fill="currentColor"
+            strokeWidth="0"
+            viewBox="0 0 512 512"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="none"
+              strokeMiterlimit="10"
+              strokeWidth="32"
+              d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
+            ></path>
+            <path
+              fill="none"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="32"
+              d="M338.29 338.29L448 448"
+            ></path>
+          </svg>
           <Dark />
         </div>
       </div>
+      {nav && (
+        <div className="col-span-12 md:hidden">
+          <ul className="py-4 bg-slate-100 dark:bg-gray-900 dark:text-white pt-2 rounded ease-linear duration-150">
+            <li onClick={handleNav}>
+              <Link
+                href="/"
+                className="block py-2 px-2 hover:bg-slate-200 ease-linear duration-150 dark:text-gray-200 dark:hover:bg-gray-500"
+              >
+                Home
+              </Link>
+            </li>
+            {groupData.length > 0 &&
+              groupData.map((group, i) => (
+                <li key={i} onClick={handleNav}>
+                  <Link
+                    href={`/tutorial/${group.group_slug}`}
+                    className="block py-2 px-2 hover:bg-slate-200 ease-linear duration-150 dark:text-gray-200 dark:hover:bg-gray-500"
+                  >
+                    {group.group_name}
+                  </Link>
+                </li>
+              ))}
+            <li onClick={handleNav}>
+              <Link
+                href="/"
+                className="block py-2 px-2 hover:bg-slate-200 ease-linear duration-150 dark:text-gray-200 dark:hover:bg-gray-500"
+              >
+                About
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }

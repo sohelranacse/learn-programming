@@ -2,12 +2,12 @@ import Header from "./common/Header";
 import Footer from "./common/Footer";
 import ScrollToTop from "./common/ScrollToTop";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, groupData }) => {
   return (
     <>
-      <Header />
+      <Header groupData={groupData} />
       {children}
-      <Footer />
+      <Footer groupData={groupData} />
       <ScrollToTop />
     </>
   );

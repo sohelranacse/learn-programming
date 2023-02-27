@@ -5,9 +5,6 @@ const CodeBlock = ({ code, language }) => {
   return <Highlight className={language}>{code}</Highlight>;
 };
 
-import { FaRegEnvelope } from "react-icons/fa";
-import { FaFacebookSquare } from "react-icons/fa";
-
 function Note() {
   return (
     <div className="">
