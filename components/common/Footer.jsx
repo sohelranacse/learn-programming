@@ -5,7 +5,7 @@ function Footer({ groupData }) {
     <footer>
       <div className="bg-slate-900 px-2 dark:bg-gray-900">
         <div className="container mx-auto md:grid grid-cols-4 gap-4 pt-8 md:py-8">
-          <div className="py-4 md:py-8">
+          <div className="py-4 md:py-8 pl-2">
             <h3 className="py-4 uppercase text-slate-300">
               Full Stack Development
             </h3>
@@ -23,7 +23,7 @@ function Footer({ groupData }) {
                 ))}
             </ul>
           </div>
-          <div className="py-4 md:py-8">
+          <div className="py-4 md:py-8 pl-2">
             <h3 className="py-4 uppercase text-slate-300">Our Services</h3>
             <ul className="text-slate-400 text-sm">
               <li className="py-1 hover:text-slate-200 ease-linear duration-100">
@@ -40,7 +40,7 @@ function Footer({ groupData }) {
               </li>
             </ul>
           </div>
-          <div className="py-4 md:py-8">
+          <div className="py-4 md:py-8 pl-2">
             <h3 className="py-4 uppercase text-slate-300">Contact</h3>
             <ul className="text-slate-400 text-sm">
               <li className="py-1 hover:text-slate-200 ease-linear duration-100">
@@ -52,19 +52,11 @@ function Footer({ groupData }) {
               <li className="py-1 hover:text-slate-200 ease-linear duration-100">
                 Email: info@devlearnhub.com
               </li>
-              <li className="py-1">
-                <Link
-                  href="/about"
-                  className="hover:text-slate-200 ease-linear duration-100"
-                >
-                  About
-                </Link>
-              </li>
             </ul>
           </div>
-          <div className="py-4 md:py-8">
+          <div className="py-4 md:py-8 pl-2">
             {/* last div */}
-            <ul className="flex gap-x-5 md:justify-end md:pt-20">
+            <ul className="flex gap-x-5 md:justify-end md:pt-16">
               <li className="h-8 w-8 bg-slate-300 rounded-full text-center leading-[26px]">
                 <a
                   href="https://facebook.com"
@@ -129,7 +121,14 @@ function Footer({ groupData }) {
                 </a>
               </li>
             </ul>
-            <ul className="flex gap-2 md:justify-end pt-3 pb-1">
+            <ul className="flex gap-2 md:justify-end pt-4 pb-2">
+              <Link
+                href="/about"
+                className="hover:text-slate-200 text-sm text-slate-400 ease-linear duration-100"
+              >
+                About
+              </Link>
+              <span className="text-slate-400 text-sm">|</span>
               <Link
                 href="/sitemap.xml"
                 className="hover:text-slate-200 text-sm text-slate-400 ease-linear duration-100"

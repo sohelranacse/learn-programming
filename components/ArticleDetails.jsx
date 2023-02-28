@@ -1,16 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import SidebarPost from "./SidebarPost";
 import MyCode from "./MyCode";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
+import { useTheme } from "next-themes";
 
 function ArticleDetails({ postInfo }) {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   const postDetails = postInfo.postDetails;
   return (
     <section className="px-2 mt-14 min-h-screen dark:bg-gray-800">
       <div className="container mx-auto md:grid grid-cols-12 h-full">
         <div className="col-span-9 h-full md:pl-2 py-6 md:pr-6">
-          <h1 className="mt-2 text-4xl pb-3 dark:text-gray-200">
+          <h1 className="mt-2 text-xl md:text-4xl pb-3 dark:text-gray-200">
             {postInfo.post_title}
           </h1>
           <div className="md:flex space-y-2 flex-wrap justify-between pb-4">
@@ -43,7 +53,11 @@ function ArticleDetails({ postInfo }) {
               post.post_type == 1 ? (
                 <div
                   key={i}
-                  className="my-4 dark:text-gray-300 leading-7 textDetails"
+                  className={
+                    theme == "dark"
+                      ? `my-4 dark:text-gray-300 leading-7 textDetailsDark`
+                      : `my-4 dark:text-gray-300 leading-7 textDetails`
+                  }
                   dangerouslySetInnerHTML={{ __html: post.post_details }}
                 ></div>
               ) : post.post_type == 2 ? (
