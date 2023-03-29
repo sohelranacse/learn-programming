@@ -1,6 +1,6 @@
 import NavSide from "./NavSide";
 import FeaturedArticles from "./FeaturedArticles";
-import Recent from "./RecentArticle";
+import RecentArticle from "./RecentArticle";
 import SidebarPost from "./SidebarPost";
 
 function Homepage({ categories, featured, recent, popular }) {
@@ -10,7 +10,7 @@ function Homepage({ categories, featured, recent, popular }) {
         <NavSide categories={categories} />
         <div className="col-span-7 h-full py-6 md:px-6">
           <FeaturedArticles featured={featured} />
-          <Recent recent={recent} />
+          <RecentArticle recentPost={recent} />
         </div>
 
         {/* right side */}

@@ -4,12 +4,16 @@ import { useState, useEffect } from "react";
 import Dark from "./Dark";
 const PF = process.env.NEXT_PUBLIC_PF;
 import { useTheme } from "next-themes";
+import Router from "next/router";
 
 function Header({ groupData }) {
   const [nav, setNav] = useState(false);
   const [search, setSearch] = useState(false);
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
+  const [query, setQuery] = useState("");
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -25,8 +29,20 @@ function Header({ groupData }) {
     setSearch(!search);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (query !== "") {
+      if (query.length < 4) alert("Please type atleast 3 characters.");
+      else Router.push(`/search?q=${query}`);
+    }
+  };
+
+  const handleChange = (event) => {
+    setQuery(event.target.value);
+  };
+
   return (
-    <nav className="w-full fixed top-0 z-10 shadow-md bg-slate-100 px-2 border-t-[3px] md:border-t-[3.5px] border-yellow-400 dark:bg-gray-900 dark:text-gray-200">
+    <nav className="w-full fixed top-0 z-10 shadow-md bg-slate-100 px-2 border-t-[3.5px] border-yellow-400 dark:bg-gray-900 dark:text-gray-200">
       <div className="container mx-auto h-14 grid grid-cols-12">
         <div className="col-span-8 md:col-span-6 flex md:justify-between">
           {/* menu icon */}
@@ -162,7 +178,10 @@ function Header({ groupData }) {
           </ul>
         </div>
         <div className="col-span-4 md:col-span-6 ml-2 flex justify-end gap-2">
-          <form className="hidden md:flex h-10 w-full border my-2 border-slate-300 rounded-sm hover:border-yellow-400 dark:border-gray-700 dark:hover:border-gray-400 ease-linear duration-150">
+          <form
+            className="hidden md:flex h-10 w-full border my-2 border-slate-300 rounded-sm hover:border-yellow-400 dark:border-gray-700 dark:hover:border-gray-400 ease-linear duration-150"
+            onSubmit={handleSubmit}
+          >
             <button
               type="submit"
               className="bg-white pointer-events-none text-slate-400 font-bold text-lg px-4 dark:bg-gray-800"
@@ -181,6 +200,8 @@ function Header({ groupData }) {
             </button>
             <input
               type="text"
+              value={query}
+              onChange={handleChange}
               placeholder="Search..."
               className="w-full bg-white focus:outline-none dark:bg-gray-800"
               required
@@ -238,7 +259,10 @@ function Header({ groupData }) {
       {/* mobile search */}
       {search && (
         <div className="col-span-12 text-sm">
-          <form className="flex h-10 w-full border my-2 border-slate-300 rounded-sm hover:border-yellow-400 dark:border-gray-700 dark:hover:border-gray-400 ease-linear duration-150">
+          <form
+            className="flex h-10 w-full border mb-1 border-slate-300 rounded-sm hover:border-yellow-400 dark:border-gray-700 dark:hover:border-gray-400 ease-linear duration-150"
+            onSubmit={handleSubmit}
+          >
             <button
               type="submit"
               className="bg-white pointer-events-none text-slate-400 font-bold text-lg px-4 dark:bg-gray-800"
@@ -258,6 +282,8 @@ function Header({ groupData }) {
             <input
               type="text"
               placeholder="Search..."
+              value={query}
+              onChange={handleChange}
               className="w-full bg-white focus:outline-none dark:bg-gray-800"
               required
             />

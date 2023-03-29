@@ -14,8 +14,8 @@ const MyCode = ({ code, language }) => {
   };
 
   return (
-    <div className="code-snippet border-gray-800 bg-slate-800 rounded-md my-6">
-      <div className="flex text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans">
+    <div className="code-snippet bg-slate-800 my-6">
+      <div className="flex dark:border-t dark:border-l dark:border-r dark:rounded-t dark:border-gray-700 text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans">
         <span>{language}</span>
         {copySuccess ? (
           <button className="flex ml-auto gap-2" onClick={handleCopy}>

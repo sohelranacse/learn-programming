@@ -5,6 +5,7 @@ import SidebarPost from "./SidebarPost";
 import MyCode from "./MyCode";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 import { useTheme } from "next-themes";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 function ArticleDetails({ postInfo }) {
   const { theme } = useTheme();
@@ -16,6 +17,7 @@ function ArticleDetails({ postInfo }) {
   if (!mounted) return null;
 
   const postDetails = postInfo.postDetails;
+  const sidebarArticles = postInfo.relatedPost;
   return (
     <section className="px-2 mt-14 min-h-screen dark:bg-gray-800">
       <div className="container mx-auto md:grid grid-cols-12 h-full">
@@ -37,7 +39,7 @@ function ArticleDetails({ postInfo }) {
             <span className="text-slate-400 text-sm flex">
               Total Views: {postInfo.hit}
             </span>
-            <span className="text-slate-400 text-sm flex italic">
+            <span className="text-slate-400 text-sm flex md:italic">
               Published on: {postInfo.post_date}
             </span>
           </div>
@@ -81,11 +83,22 @@ function ArticleDetails({ postInfo }) {
 
         {/* right side */}
         <div className="col-span-3 h-full py-6">
-          <SidebarPost
-            name={`Related`}
-            sidebarArticles={postInfo.relatedPost}
-          />
+          <SidebarPost name={`Related`} sidebarArticles={sidebarArticles} />
         </div>
+
+        {sidebarArticles.length && (
+          <div className="py-4 px-2">
+            <Link
+              href={`/article/${sidebarArticles[0].post_slug}`}
+              className="flex gap-1 text-blue-700 text-xl hover:text-blue-400 ease-linear duration-150"
+            >
+              NEXT
+              <span className="font-bold text-2xl pt-0.5">
+                <AiOutlineArrowRight />
+              </span>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
